@@ -1,4 +1,5 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-05 21:29:12,1780694952,Dream FC,IND,True,3,0,0,0,W,False,2.0,2.0,504.0,0.0,0.0,Erling Haaland,26,7
 2026-06-05 20:59:30,1780693170,RIAL MADRID FC,RMA,True,1,1,0,0,D,False,2.0,1.0,1628.0,1.0,0.0,Erling Haaland,90,7
 2026-06-05 19:50:18,1780689018,PROSOCCERGIANTS FC,PSG,True,1,0,0,0,W,False,7.0,1.0,1988.0,1.0,2.0,O. Dembélé,90,7
 2026-06-05 19:42:52,1780688572,PROSOCCERGIANTS FC,PSG,True,4,0,0,0,W,False,6.0,5.0,2133.0,0.0,1.0,Kylian Mbappé,90,7
