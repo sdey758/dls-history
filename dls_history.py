@@ -40,9 +40,7 @@ cursor = data["Matches"].get("LEK")
 
 page = 1
 
-print(
-    f"Page {page} | Matches Downloaded: {len(all_matches)}"
-)
+print(f"Page {page} | Matches Downloaded: {len(all_matches)}")
 
 while cursor:
 
@@ -124,13 +122,30 @@ for m in all_matches:
         else m["HSc"]
     )
 
-    result = (
-        "W"
-        if goals_for > goals_against
-        else "D"
-        if goals_for == goals_against
-        else "L"
+    penalty_for = (
+        m.get("HPe", 0)
+        if m.get("Hom")
+        else m.get("APe", 0)
     )
+
+    penalty_against = (
+        m.get("APe", 0)
+        if m.get("Hom")
+        else m.get("HPe", 0)
+    )
+
+    # Result Logic
+    if goals_for > goals_against:
+        result = "W"
+    elif goals_for < goals_against:
+        result = "L"
+    else:
+        if penalty_for > penalty_against:
+            result = "PW"
+        elif penalty_for < penalty_against:
+            result = "PL"
+        else:
+            result = "D"
 
     timestamp = m.get("MTm")
 
@@ -148,9 +163,20 @@ for m in all_matches:
             "Opponent": m.get("TNL"),
             "OpponentShort": m.get("TNS"),
             "Home": m.get("Hom"),
+
             "Goals_For": goals_for,
             "Goals_Against": goals_against,
+
+            "Penalty_For": penalty_for,
+            "Penalty_Against": penalty_against,
+
             "Result": result,
+
+            "Went_To_Penalties": (
+                penalty_for > 0
+                or penalty_against > 0
+            ),
+
             "Shots": m.get("UserShots"),
             "Shots_On_Target": m.get("UserShotsOnTarget"),
             "Possession": m.get("UserPossession"),
@@ -183,12 +209,16 @@ print("=================================")
 print(f"Total Matches: {len(df)}")
 print(f"CSV File: {csv_name}")
 
-wins = len(df[df["Result"] == "W"])
+wins = len(df[df["Result"].isin(["W", "PW"])])
 draws = len(df[df["Result"] == "D"])
-losses = len(df[df["Result"] == "L"])
+losses = len(df[df["Result"].isin(["L", "PL"])])
 
-print(f"Wins   : {wins}")
-print(f"Draws  : {draws}")
-print(f"Losses : {losses}")
+penalty_wins = len(df[df["Result"] == "PW"])
+penalty_losses = len(df[df["Result"] == "PL"])
 
+print(f"Wins           : {wins}")
+print(f"Draws          : {draws}")
+print(f"Losses         : {losses}")
+print(f"Penalty Wins   : {penalty_wins}")
+print(f"Penalty Losses : {penalty_losses}")
 
