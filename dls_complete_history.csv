@@ -1,4 +1,7 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-06 16:04:46,1780761886,NT NUR,NUR,True,3,0,0,0,W,False,6.0,3.0,1710.0,2.0,1.0,Erling Haaland,71,6
+2026-06-06 15:57:18,1780761438,DLS KING ANOWAR HUSSAIN,ANO,False,3,0,0,0,W,False,3.0,1.0,1019.0,1.0,0.0,Tony Adams,56,6
+2026-06-06 15:48:53,1780760933,BARCALONA,INT,True,2,1,0,0,W,False,2.0,2.0,2022.0,0.0,2.0,Kylian Mbappé,90,6
 2026-06-06 13:52:03,1780753923,Dream FC,RDT,False,0,1,0,0,L,False,2.0,0.0,2144.0,0.0,1.0,Cristian Romero,90,6
 2026-06-06 13:22:37,1780752157,KHAN,KHN,True,1,2,0,0,L,False,8.0,1.0,1954.0,3.0,0.0,Erling Haaland,90,6
 2026-06-06 13:07:51,1780751271,KOLKATA,MMM,False,2,0,0,0,W,False,9.0,3.0,2430.0,4.0,1.0,Tony Adams,90,6
