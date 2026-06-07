@@ -1,4 +1,7 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-07 16:09:26,1780848566,CHELSEA,CHE,False,0,3,0,0,L,False,1.0,0.0,1619.0,0.0,0.0,Virgil,90,6
+2026-06-07 15:40:17,1780846817,BANGLADESH,BAF,True,0,1,0,0,L,False,3.0,0.0,1992.0,1.0,0.0,Virgil,90,6
+2026-06-07 15:30:53,1780846253,LEGEND FC,LEG,False,3,1,0,0,W,False,8.0,5.0,2571.0,2.0,0.0,Erling Haaland,90,6
 2026-06-07 13:44:47,1780839887,ARG,ARG,True,0,5,0,0,L,False,1.0,0.0,1996.0,0.0,0.0,Virgil,90,5
 2026-06-07 12:50:55,1780836655,TESSA FC,TES,True,0,4,0,0,L,False,5.0,1.0,2326.0,1.0,0.0,Raphinha,90,5
 2026-06-07 06:38:19,1780814299,REAL  MADRID,RMA,True,1,2,0,0,L,False,1.0,1.0,2210.0,0.0,0.0,Cristiano Ronaldo,90,5
