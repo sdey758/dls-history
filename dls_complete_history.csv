@@ -1,4 +1,7 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-07 18:55:09,1780858509,BD  BRAZIL,BRA,False,1,2,0,0,L,False,2.0,1.0,1760.0,0.0,0.0,Erling Haaland,90,6
+2026-06-07 18:44:42,1780857882,CHELSEA FC,DRE,False,2,2,0,0,D,False,8.0,3.0,2253.0,2.0,1.0,M. Salah,90,6
+2026-06-07 18:37:42,1780857462,BRAZIL,BRA,False,1,6,0,0,L,False,2.0,1.0,2249.0,0.0,0.0,Lamine Yamal,90,6
 2026-06-07 16:09:26,1780848566,CHELSEA,CHE,False,0,3,0,0,L,False,1.0,0.0,1619.0,0.0,0.0,Virgil,90,6
 2026-06-07 15:40:17,1780846817,BANGLADESH,BAF,True,0,1,0,0,L,False,3.0,0.0,1992.0,1.0,0.0,Virgil,90,6
 2026-06-07 15:30:53,1780846253,LEGEND FC,LEG,False,3,1,0,0,W,False,8.0,5.0,2571.0,2.0,0.0,Erling Haaland,90,6
