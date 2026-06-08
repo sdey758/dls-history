@@ -1,4 +1,5 @@
-
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from curl_cffi import requests
 import pandas as pd
 import time
@@ -92,7 +93,9 @@ while cursor:
         break
 
 print("\nBuilding CSV...")
-
+refresh_time = datetime.now(
+    ZoneInfo("Asia/Kolkata")
+)
 rows = []
 
 seen = set()
@@ -184,7 +187,8 @@ for m in all_matches:
             "Fouls": m.get("UserFouls"),
             "MOTM": m.get("MOTM"),
             "Minutes": m.get("Min"),
-            "Division": m.get("MDI")
+            "Division": m.get("MDI"),
+            "Data_Refresh_Time": refresh_time
         }
     )
 
