@@ -1,4 +1,7 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-08 08:40:45,1780908045,BANGLADESH,BAN,True,0,0,0,0,D,False,2.0,1.0,1510.0,0.0,0.0,Antoine Griezmann,90,7
+2026-06-08 08:26:00,1780907160,BRAZIL,CBF,True,1,1,0,0,D,False,3.0,1.0,2209.0,1.0,0.0,Vinícius Júnior,90,7
+2026-06-08 08:19:09,1780906749,ABDULLAH,ABD,True,1,1,0,0,D,False,3.0,1.0,1782.0,0.0,0.0,Gabriel Batistuta,90,7
 2026-06-08 06:56:12,1780901772,BRAZIL,BRA,False,0,2,0,0,L,False,4.0,2.0,1644.0,1.0,0.0,Achraf Hakimi,90,7
 2026-06-08 06:25:17,1780899917,ARGENTINA,RIY,False,1,0,0,0,W,False,4.0,3.0,2033.0,1.0,0.0,Raphinha,90,7
 2026-06-08 05:05:53,1780895153,ARSENAL,ARS,True,0,1,0,0,L,False,2.0,2.0,1836.0,1.0,0.0,Declan Rice,90,7
