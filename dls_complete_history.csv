@@ -1,4 +1,9 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division
+2026-06-08 06:56:12,1780901772,BRAZIL,BRA,False,0,2,0,0,L,False,4.0,2.0,1644.0,1.0,0.0,Achraf Hakimi,90,7
+2026-06-08 06:25:17,1780899917,ARGENTINA,RIY,False,1,0,0,0,W,False,4.0,3.0,2033.0,1.0,0.0,Raphinha,90,7
+2026-06-08 05:05:53,1780895153,ARSENAL,ARS,True,0,1,0,0,L,False,2.0,2.0,1836.0,1.0,0.0,Declan Rice,90,7
+2026-06-08 04:49:13,1780894153,BRASIL,CBF,False,2,4,0,0,L,False,10.0,3.0,2429.0,2.0,0.0,Kylian Mbappé,90,6
+2026-06-08 04:07:30,1780891650,Dream FC,VN,False,2,0,0,0,W,False,4.0,3.0,2078.0,1.0,0.0,Kylian Mbappé,90,6
 2026-06-07 20:10:16,1780863016,PRAISE   LORD,PRL,False,2,1,0,0,W,False,3.0,2.0,2365.0,0.0,0.0,Kylian Mbappé,90,6
 2026-06-07 20:02:35,1780862555,CHENNAI  FC,TOM,False,2,4,0,0,L,False,4.0,2.0,2518.0,0.0,1.0,Gabriel Batistuta,90,6
 2026-06-07 18:55:09,1780858509,BD  BRAZIL,BRA,False,1,2,0,0,L,False,2.0,1.0,1760.0,0.0,0.0,Erling Haaland,90,6
