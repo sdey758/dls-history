@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
@@ -8,29 +7,7 @@ from datetime import datetime
 
 URL = "https://st.cf.api.ftpub.net/StatsTracker_Frontline"
 PLAYER_ID = "z261l1rs"
-csv_name = "dls_complete_history.csv"
 
-existing_df = None
-
-if os.path.exists(csv_name):
-
-    try:
-
-        existing_df = pd.read_csv(
-            csv_name
-        )
-
-        print(
-            f"Existing Matches: "
-            f"{len(existing_df)}"
-        )
-
-    except Exception as e:
-
-        print(
-            f"Could not read "
-            f"existing CSV: {e}"
-        )
 all_matches = []
 
 print("Fetching first page...")
@@ -75,7 +52,7 @@ while cursor:
         "queryData": {
             "TId": PLAYER_ID,
             "ITs": its,
-            "LIM": 200,
+            "LIM": 500,
             "MTm": cursor
         },
         "analytics": {
@@ -217,27 +194,13 @@ for m in all_matches:
 
 df = pd.DataFrame(rows)
 
-if existing_df is not None:
-
-    df = pd.concat(
-        [df, existing_df],
-        ignore_index=True
-    )
-
-    df.drop_duplicates(
-        subset=["MatchTimestamp"],
-        keep="first",
-        inplace=True
-    )
-df["MatchTimestamp"] = pd.to_numeric(
-    df["MatchTimestamp"],
-    errors="coerce"
-)
 df.sort_values(
     by="MatchTimestamp",
     ascending=False,
     inplace=True
 )
+
+csv_name = "dls_complete_history.csv"
 
 df.to_csv(
     csv_name,
