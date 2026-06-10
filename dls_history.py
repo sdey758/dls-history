@@ -52,7 +52,7 @@ while cursor:
         "queryData": {
             "TId": PLAYER_ID,
             "ITs": its,
-            "LIM": 10,
+            "LIM": 100,
             "MTm": cursor
         },
         "analytics": {
