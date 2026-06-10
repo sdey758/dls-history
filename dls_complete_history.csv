@@ -1,5 +1,4 @@
 MatchDate,MatchTimestamp,Opponent,OpponentShort,Home,Goals_For,Goals_Against,Penalty_For,Penalty_Against,Result,Went_To_Penalties,Shots,Shots_On_Target,Possession,Corners,Fouls,MOTM,Minutes,Division,Data_Refresh_Time
-,1781122013,BIG BRAIN,BIG,True,0,0,0,0,D,False,4.0,2.0,1843.0,2.0,2.0,A.Becker,90,7,2026-06-11 02:02:33.001561+05:30
 2026-06-10 18:59:45,1781117985,BANGADESH  FC,BDF,True,4,1,0,0,W,False,5.0,3.0,2315.0,0.0,1.0,Kylian Mbappé,90,7,2026-06-11 02:02:33.001561+05:30
 2026-06-10 15:30:53,1781105453,MANCHESTER UNITED,MUD,True,6,2,0,0,W,False,8.0,7.0,2841.0,0.0,0.0,Kylian Mbappé,90,7,2026-06-11 02:02:33.001561+05:30
 2026-06-10 15:22:54,1781104974,PALESTINE,PAL,True,2,2,0,0,D,False,7.0,2.0,2209.0,0.0,0.0,Cristiano Ronaldo,90,7,2026-06-11 02:02:33.001561+05:30
