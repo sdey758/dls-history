@@ -1,3 +1,4 @@
+import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
@@ -7,7 +8,24 @@ from datetime import datetime
 
 URL = "https://st.cf.api.ftpub.net/StatsTracker_Frontline"
 PLAYER_ID = "z261l1rs"
+csv_name = "dls_complete_history.csv"
 
+existing_timestamps = set()
+
+if os.path.exists(csv_name):
+
+    old_df = pd.read_csv(csv_name)
+
+    existing_timestamps = set(
+        old_df["MatchTimestamp"]
+        .astype(str)
+        .tolist()
+    )
+
+    print(
+        f"Existing Matches: "
+        f"{len(existing_timestamps)}"
+    )
 all_matches = []
 
 print("Fetching first page...")
@@ -102,7 +120,12 @@ rows = []
 seen = set()
 
 for m in all_matches:
+timestamp = str(
+    m.get("MTm")
+)
 
+if timestamp in existing_timestamps:
+    continue
     match_id = (
         str(m.get("MTm"))
         + "_"
