@@ -191,6 +191,7 @@ if before != after:
     print(f"Removed {before - after} duplicate(s) during merge.")
 
 # ── Sort and save ─────────────────────────────────────────────────────────────
+df["MatchTimestamp"] = pd.to_numeric(df["MatchTimestamp"], errors="coerce")
 df.sort_values(by="MatchTimestamp", ascending=False, inplace=True)
 df.to_csv(CSV_NAME, index=False)
 
