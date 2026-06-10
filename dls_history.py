@@ -229,7 +229,10 @@ if existing_df is not None:
         keep="first",
         inplace=True
     )
-
+df["MatchTimestamp"] = pd.to_numeric(
+    df["MatchTimestamp"],
+    errors="coerce"
+)
 df.sort_values(
     by="MatchTimestamp",
     ascending=False,
