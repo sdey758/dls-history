@@ -120,12 +120,14 @@ rows = []
 seen = set()
 
 for m in all_matches:
-timestamp = str(
-    m.get("MTm")
-)
 
-if timestamp in existing_timestamps:
-    continue
+    timestamp = str(
+        m.get("MTm")
+    )
+
+    if timestamp in existing_timestamps:
+        continue
+
     match_id = (
         str(m.get("MTm"))
         + "_"
