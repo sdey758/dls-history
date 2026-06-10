@@ -92,7 +92,23 @@ while cursor:
 
         matches = page_data.get("results", [])
         print(f"Matches returned: {len(matches)}")
+        stop_fetch = False
 
+        for match in matches:
+
+        if str(match.get("MTm")) in existing_timestamps:
+
+        stop_fetch = True
+        break
+
+        if stop_fetch:
+
+        print(
+        "Reached existing match. "
+        "Stopping download."
+    )
+
+    break
         if not matches:
             print("No more matches found.")
             break
