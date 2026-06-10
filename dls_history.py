@@ -139,7 +139,7 @@ for m in all_new_matches:
     timestamp = m.get("MTm")
 
     try:
-        match_date = datetime.utcfromtimestamp(int(timestamp))
+        match_date = datetime.utcfromtimestamp(int(timestamp)).strftime("%Y-%m-%d %H:%M:%S")
     except:
         match_date = None
 
