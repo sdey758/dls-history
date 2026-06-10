@@ -218,6 +218,14 @@ for m in all_matches:
         }
     )
 
+if len(rows) == 0:
+
+    print(
+        "No new matches found."
+    )
+
+    exit()
+
 df = pd.DataFrame(rows)
 
 df.sort_values(
