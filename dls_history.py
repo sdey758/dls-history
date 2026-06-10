@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 from zoneinfo import ZoneInfo
 from curl_cffi import requests
@@ -8,24 +7,7 @@ from datetime import datetime
 
 URL = "https://st.cf.api.ftpub.net/StatsTracker_Frontline"
 PLAYER_ID = "z261l1rs"
-csv_name = "dls_complete_history.csv"
 
-existing_timestamps = set()
-
-if os.path.exists(csv_name):
-
-    old_df = pd.read_csv(csv_name)
-
-    existing_timestamps = set(
-        old_df["MatchTimestamp"]
-        .astype(str)
-        .tolist()
-    )
-
-    print(
-        f"Existing Matches: "
-        f"{len(existing_timestamps)}"
-    )
 all_matches = []
 
 print("Fetching first page...")
@@ -91,24 +73,7 @@ while cursor:
         page_data = response.json()
 
         matches = page_data.get("results", [])
-        print(f"Matches returned: {len(matches)}")
-        stop_fetch = False
 
-        for match in matches:
-
-        if str(match.get("MTm")) in existing_timestamps:
-
-        stop_fetch = True
-        break
-
-        if stop_fetch:
-
-        print(
-        "Reached existing match. "
-        "Stopping download."
-    )
-
-    break
         if not matches:
             print("No more matches found.")
             break
@@ -136,13 +101,6 @@ rows = []
 seen = set()
 
 for m in all_matches:
-
-    timestamp = str(
-        m.get("MTm")
-    )
-
-    if timestamp in existing_timestamps:
-        continue
 
     match_id = (
         str(m.get("MTm"))
@@ -233,14 +191,6 @@ for m in all_matches:
             "Data_Refresh_Time": refresh_time
         }
     )
-
-if len(rows) == 0:
-
-    print(
-        "No new matches found."
-    )
-
-    exit()
 
 df = pd.DataFrame(rows)
 
