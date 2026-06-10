@@ -16,6 +16,7 @@ latest_known_timestamp = None
 if os.path.exists(CSV_NAME):
     try:
         existing_df = pd.read_csv(CSV_NAME)
+        existing_df["MatchDate"] = pd.to_datetime(existing_df["MatchDate"], errors="coerce")
         if not existing_df.empty and "MatchTimestamp" in existing_df.columns:
             existing_df["MatchTimestamp"] = pd.to_numeric(existing_df["MatchTimestamp"], errors="coerce").astype("Int64")
             latest_known_timestamp = int(existing_df["MatchTimestamp"].max())
@@ -139,7 +140,7 @@ for m in all_new_matches:
     timestamp = m.get("MTm")
 
     try:
-        match_date = datetime.fromtimestamp(int(timestamp), datetime.UTC).replace(tzinfo=None)
+        match_date = datetime.utcfromtimestamp(int(timestamp))
     except:
         match_date = None
 
@@ -193,6 +194,7 @@ if before != after:
 # ── Sort and save ─────────────────────────────────────────────────────────────
 df["MatchTimestamp"] = pd.to_numeric(df["MatchTimestamp"], errors="coerce")
 df.sort_values(by="MatchTimestamp", ascending=False, inplace=True)
+
 df.to_csv(CSV_NAME, index=False)
 
 # ── Summary ───────────────────────────────────────────────────────────────────
