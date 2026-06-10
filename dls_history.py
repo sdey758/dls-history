@@ -75,7 +75,7 @@ while cursor:
         "queryData": {
             "TId": PLAYER_ID,
             "ITs": its,
-            "LIM": 500,
+            "LIM": 200,
             "MTm": cursor
         },
         "analytics": {
