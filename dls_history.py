@@ -73,6 +73,7 @@ while cursor:
         page_data = response.json()
 
         matches = page_data.get("results", [])
+        print(f"Matches returned: {len(matches)}")
 
         if not matches:
             print("No more matches found.")
