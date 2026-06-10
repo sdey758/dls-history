@@ -16,7 +16,6 @@ latest_known_timestamp = None
 if os.path.exists(CSV_NAME):
     try:
         existing_df = pd.read_csv(CSV_NAME)
-        existing_df["MatchDate"] = pd.to_datetime(existing_df["MatchDate"], errors="coerce")
         if not existing_df.empty and "MatchTimestamp" in existing_df.columns:
             existing_df["MatchTimestamp"] = pd.to_numeric(existing_df["MatchTimestamp"], errors="coerce").astype("Int64")
             latest_known_timestamp = int(existing_df["MatchTimestamp"].max())
