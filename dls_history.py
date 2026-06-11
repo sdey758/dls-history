@@ -18,6 +18,9 @@ if os.path.exists(CSV_NAME):
         existing_df = pd.read_csv(CSV_NAME)
         if not existing_df.empty and "MatchTimestamp" in existing_df.columns:
             existing_df["MatchTimestamp"] = pd.to_numeric(existing_df["MatchTimestamp"], errors="coerce").astype("Int64")
+            existing_df["MatchDate"] = existing_df["MatchTimestamp"].apply(
+                lambda ts: datetime.fromtimestamp(int(ts), ZoneInfo("Asia/Kolkata")).strftime("%Y-%m-%d %H:%M:%S") if pd.notna(ts) else None
+            )
             latest_known_timestamp = int(existing_df["MatchTimestamp"].max())
             print(f"Existing CSV loaded: {len(existing_df)} matches found.")
             print(f"Latest known match timestamp: {latest_known_timestamp}")
@@ -139,7 +142,7 @@ for m in all_new_matches:
     timestamp = m.get("MTm")
 
     try:
-        match_date = datetime.utcfromtimestamp(int(timestamp)).strftime("%Y-%m-%d %H:%M:%S")
+        match_date = datetime.fromtimestamp(int(timestamp), ZoneInfo("Asia/Kolkata")).strftime("%Y-%m-%d %H:%M:%S")
     except:
         match_date = None
 
